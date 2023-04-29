@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ping Pong</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+     
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>   
+
+    </head>
+    <body background="https://as1.ftcdn.net/v2/jpg/02/92/61/28/1000_F_292612869_waTVvB23AIzIY0l8uqOFxvqU4UjOxWyk.jpg">
+    <center>
+
+    <h1 class="btn btn-primary heading">AI PING PONG APP</h3>  
+    <br> <br>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Instructions</button>
+    
+        <br> <br>
+        <button class="btn btn-primary" onclick="startGame()">Play</button>
+        <br> <br>
+        <button id="status"></h3>
+            <br> <br>
+        <div id="canvas">
+        </div>
+        <br> <br>
+        <button class="btn btn-danger" onclick="restart()">Restart</button>
+        <br> <br>
+
+
+
+
+
+        <div id="myModal" class="modal fade">
+            <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal">&times;</div>
+        
+              <h4>Instructions</h4>
+              </div>
+              <div class="modal-content">
+                <h1>𝐊𝐞𝐞𝐩 𝐲𝐨𝐮𝐫 𝐥𝐚𝐩𝐭𝐨𝐩 𝐬𝐜𝐫𝐞𝐞𝐧 𝐬𝐭𝐫𝐚𝐢𝐠𝐡𝐭, 𝐭𝐡𝐞𝐧 𝐦𝐨𝐯𝐞 𝐲𝐨𝐮𝐫𝐬𝐞𝐥𝐟 𝐚𝐩𝐩𝐫𝐨𝐱𝐢𝐦𝐚𝐭𝐞𝐥𝐲 1̳0̳0̳-̳1̳2̳0̳ c̳m̳ a̳w̳a̳y̳ 𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐥𝐚𝐩𝐭𝐨𝐩.
+                    𝐌𝐨𝐯𝐞 𝐲𝐨𝐮𝐫 𝘳𝘪𝘨𝘩𝘵 𝘸𝘳𝘪𝘴𝘵 𝐢𝐧 𝐚𝐧 🅐🅢🅒🅔🅝🅓🅘🅝🅖 and 🅓🅔🅢🅒🅔🅝🅓🅘🅝🅖 𝐦𝐚𝐧𝐧𝐞𝐫, 𝐚 r̲e̲d̲ d̲o̲t̲ 𝐬𝐡𝐨𝐮𝐥𝐝 𝐚𝐩𝐩𝐞𝐚𝐫 𝐨𝐧 𝐲𝐨𝐮𝐫 𝘳𝘪𝘨𝘩𝘵 𝘸𝘳𝘪𝘴𝘵
+                    𝐍𝐨𝐰 𝐩𝐫𝐞𝐬𝐬 𝐭𝐡𝐞 𝐩̶𝐥̶𝐚̶𝐲̶ 𝐛̶𝐮̶𝐭̶𝐭̶𝐨̶𝐧̶, 𝐚𝐧𝐝 𝐚𝐠𝐚𝐢𝐧 𝐦𝐨𝐯𝐞 𝐲𝐨𝐮𝐫𝐬𝐞𝐥𝐟 1̳0̳0̳-̳1̳2̳0̳ c̳m̳ a̳w̳a̳y̳ 𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐥𝐚𝐩𝐭𝐨𝐩
+                    𝐓𝐡𝐞 𝐫𝐞𝐝 𝐩𝐚𝐝𝐝𝐞𝐥 𝐢𝐬 𝐲𝐨𝐮𝐫 𝐩𝐚𝐝𝐝𝐞𝐥, 𝐭𝐡𝐚𝐭 𝐰̶𝐢̶𝐥̶𝐥̶ 𝐦̶𝐨̶𝐯̶𝐞̶ 𝐚̶𝐬̶ 𝐩̶𝐞̶𝐫̶ 𝐭̶𝐡̶𝐞̶ 𝐦̶𝐨̶𝐯̶𝐞̶𝐦̶𝐞̶𝐧̶𝐭̶ 𝐨𝐟 𝐲𝐨𝐮𝐫 𝘳𝘪𝘨𝘩𝘵 𝘸𝘳𝘪𝘴𝘵</h1>
+              </div>
+          
+            </div>
+            </div>
+            </div>
+            </div>
+
+    </center>
+
+        <script src="main.js"></script>
+    </body>
+    <div class ="copy_right_footer">Developed by - 𝓥𝓲𝓿𝓪𝓪𝓷𝓪 𝓢𝓱𝓪𝓱</div>
+</html>
